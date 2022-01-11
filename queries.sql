@@ -49,3 +49,5 @@ VALUES ('Bill Gates', '500', 'software developer', '101', 'true');
 UPDATE "Employees" SET "salary" = '500' WHERE "jobposition" = 'Cook';
 
 DELETE FROM "Employees" WHERE "fullname" = 'Lazy Larry';
+
+ALTER TABLE "Employees" ADD Column "ParkingSpot" varchar(10); 
