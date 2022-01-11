@@ -39,3 +39,6 @@ VALUES ('Betty White', '15000', 'president', '10', 'false');
 SELECT "fullname" from "Employees";
 
 SELECT "fullname", "phoneextension" FROM "Employees" WHERE "isparttime" = false;
+
+INSERT INTO "Employees" ("fullname",  "salary", "jobposition", "phoneextension", "isparttime")
+VALUES ('Bill Gates', '450', 'software developer', '101', 'true');
