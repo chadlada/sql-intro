@@ -7,7 +7,7 @@ IsPartTime BOOLEAN
 );
 
 INSERT INTO "Employees" ("fullname",  "salary", "jobposition", "phoneextension", "isparttime")
-VALUES ('John Smith', '1800', 'Janitor', '1', 'true');
+VALUES ('John Smith', '1800', 'Cook', '1', 'true');
 
 INSERT INTO "Employees" ("fullname",  "salary", "jobposition", "phoneextension", "isparttime")
 VALUES ('John Lennon', '12000', 'Guitar', '43', 'false');
@@ -42,3 +42,5 @@ SELECT "fullname", "phoneextension" FROM "Employees" WHERE "isparttime" = false;
 
 INSERT INTO "Employees" ("fullname",  "salary", "jobposition", "phoneextension", "isparttime")
 VALUES ('Bill Gates', '450', 'software developer', '101', 'true');
+
+UPDATE "Employees" SET "salary" = '500' WHERE "jobposition" = 'cook';
