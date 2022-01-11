@@ -36,11 +36,14 @@ VALUES ('Bob Sagget', '300', 'Dad', '6', 'false');
 INSERT INTO "Employees" ("fullname",  "salary", "jobposition", "phoneextension", "isparttime")
 VALUES ('Betty White', '15000', 'president', '10', 'false');
 
+INSERT INTO "Employees" ("fullname",  "salary", "jobposition", "phoneextension", "isparttime")
+VALUES ('Lazy Larry', '15000', 'president', '10', 'false');
+
 SELECT "fullname" from "Employees";
 
 SELECT "fullname", "phoneextension" FROM "Employees" WHERE "isparttime" = false;
 
 INSERT INTO "Employees" ("fullname",  "salary", "jobposition", "phoneextension", "isparttime")
-VALUES ('Bill Gates', '450', 'software developer', '101', 'true');
+VALUES ('Bill Gates', '500', 'software developer', '101', 'true');
 
 UPDATE "Employees" SET "salary" = '500' WHERE "jobposition" = 'cook';
