@@ -35,3 +35,5 @@ VALUES ('Bob Sagget', '300', 'Dad', '6', 'false');
 
 INSERT INTO "Employees" ("fullname",  "salary", "jobposition", "phoneextension", "isparttime")
 VALUES ('Betty White', '15000', 'president', '10', 'false');
+
+SELECT "fullname" from "Employees";
