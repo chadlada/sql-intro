@@ -37,3 +37,5 @@ INSERT INTO "Employees" ("fullname",  "salary", "jobposition", "phoneextension",
 VALUES ('Betty White', '15000', 'president', '10', 'false');
 
 SELECT "fullname" from "Employees";
+
+SELECT "fullname", "phoneextension" FROM "Employees" WHERE "isparttime" = false;
