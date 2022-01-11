@@ -46,4 +46,6 @@ SELECT "fullname", "phoneextension" FROM "Employees" WHERE "isparttime" = false;
 INSERT INTO "Employees" ("fullname",  "salary", "jobposition", "phoneextension", "isparttime")
 VALUES ('Bill Gates', '500', 'software developer', '101', 'true');
 
-UPDATE "Employees" SET "salary" = '500' WHERE "jobposition" = 'cook';
+UPDATE "Employees" SET "salary" = '500' WHERE "jobposition" = 'Cook';
+
+DELETE FROM "Employees" WHERE "fullname" = 'Lazy Larry';
