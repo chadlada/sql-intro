@@ -184,10 +184,7 @@ WHERE "ProductId" = 2;
 -- You may not write the value of an Id in your query, let SQL do the work (HINT: JOIN)
 SELECT "ProductOrders"."OrderQuantity"
 FROM "ProductOrders"
-JOIN "Orders" ON "ProductOrders"."OrderID"="Orders"."Id"
+JOIN "Orders" ON "ProductOrders"."OrderId"="Orders"."Id"
 JOIN "Products"ON "ProductOrders"."ProductId"="Products"."Id"
 WHERE "Products"."Name"='FlowBee' AND "Orders"."OrderNumber"='X529';
-
-
-
 
