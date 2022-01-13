@@ -61,10 +61,10 @@ ALTER TABLE "Employees" ADD Column "ParkingSpot" varchar(10);
 --    * Id as a primary key
     --* DepartmentName as text
     --* Building as text
-CREATE TABLE "Departments" (
-   "Id"               SERIAL PRIMARY KEY,
-   "DepartmentName"            TEXT NOT NULL,
-   "Building"  TEXT
+Create Table "Departments" (
+  "Id" SERIAL PRIMARY KEY,
+  "DepartmentName" TEXT,
+  "Building"  TEXT NOT Null
 );
 
 --* Add a Foreign key DepartmentId to your Employees Table. 
@@ -156,10 +156,37 @@ Values (2, 1, 2);
 -- Show this query for buildings named North Side, East Side, and finally a building that you actually have in your data 
 -- even if your data doesn't have any departments in those buildings. 
 -- NOTE this means you can't manually look up Ids and use them, you have to let SQL do that work. (Hint: JOIN)
+SELECT *
+FROM "Departments"
+JOIN "Employees" ON "Employees"."DepartmentId" = "Departments"."Id"
+WHERE "Departments"."Building" = 'North';
+
+SELECT *
+FROM "Departments"
+JOIN "Employees" ON "Employees"."DepartmentId" = "Departments"."Id"
+WHERE "Departments"."Building" = 'East';
+
+SELECT *
+FROM "Departments"
+JOIN "Employees" ON "Employees"."DepartmentId" = "Departments"."Id"
+WHERE "Departments"."Building" = 'Main';
+
+SELECT *
+FROM "Departments"
+JOIN "Employees" ON "Employees"."DepartmentId" = "Departments"."Id"
 
 -- * [ ] Find all orders that contain the product id of 2.
--- * [ ] Find the quantity of the Flowbee product from order with order number X529. You may not write the value of an Id in your query, let SQL do the work (HINT: JOIN)
+Select * 
+FROM "ProductOrders"
+WHERE "ProductId" = 2;
 
+-- * [ ] Find the quantity of the Flowbee product from order with order number X529. 
+-- You may not write the value of an Id in your query, let SQL do the work (HINT: JOIN)
+SELECT "ProductOrders"."OrderQuantity"
+FROM "ProductOrders"
+JOIN "Orders" ON "ProductOrders"."OrderID"="Orders"."Id"
+JOIN "Products"ON "ProductOrders"."ProductId"="Products"."Id"
+WHERE "Products"."Name"='FlowBee' AND "Orders"."OrderNumber"='X529';
 
 
 
