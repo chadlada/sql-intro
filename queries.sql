@@ -1,3 +1,6 @@
+--DB "Employees"
+
+--Create Tables: Employees
 CREATE TABLE IF NOT EXISTS "Employees"(
 FullName TEXT,
 Salary INT,
@@ -6,6 +9,7 @@ PhoneExtension INT,
 IsPartTime BOOLEAN
 );
 
+--Create/Add some employees
 INSERT INTO "Employees" ("fullname",  "salary", "jobposition", "phoneextension", "isparttime")
 VALUES ('John Smith', '1800', 'Cook', '1', 'true');
 
@@ -39,17 +43,23 @@ VALUES ('Betty White', '15000', 'president', '10', 'false');
 INSERT INTO "Employees" ("fullname",  "salary", "jobposition", "phoneextension", "isparttime")
 VALUES ('Lazy Larry', '15000', 'president', '10', 'false');
 
+--Select all columns for all employees
 SELECT * FROM "Employees";
 
+--Select only the full names and phone extensions for only full-time employees.
 SELECT "fullname", "phoneextension" FROM "Employees" WHERE "isparttime" = false;
 
+--Insert a new part-time employee, as a software developer, with a salary of 450. Make up values for the other columns.
 INSERT INTO "Employees" ("fullname",  "salary", "jobposition", "phoneextension", "isparttime")
 VALUES ('Bill Gates', '500', 'software developer', '101', 'true');
 
+--Update all employees that are cooks to have a salary of 500.
 UPDATE "Employees" SET "salary" = '500' WHERE "jobposition" = 'Cook';
 
+--Delete all employees that have the full name of "Lazy Larry".
 DELETE FROM "Employees" WHERE "fullname" = 'Lazy Larry';
 
+--Add a column to the table: ParkingSpot as textual information that can store up to 10 characters.
 ALTER TABLE "Employees" ADD Column "ParkingSpot" varchar(10); 
 
 
@@ -188,3 +198,7 @@ JOIN "Orders" ON "ProductOrders"."OrderId"="Orders"."Id"
 JOIN "Products"ON "ProductOrders"."ProductId"="Products"."Id"
 WHERE "Products"."Name"='FlowBee' AND "Orders"."OrderNumber"='X529';
 
+INSERT INTO "Bands" ("Name", "CountryOfOrigin", "NumberOfMembers", "Website", "Style", "IsSigned", "ContactName", "ContactPhoneNumber") 
+VALUES ('Elton John', 'United States', 1, 'eltonjohn.com', 'Rock', Yes, 'Ricky Martin', 800-321-9000);
+
+-- Add A Band
